@@ -9,6 +9,7 @@ This project automates the process of booking a medical appointment at a specifi
 - Customizable for different clinics or appointment types
 - Built with `browser-use`, `LangChain`, and Gemini (`ChatGoogleGenerativeAI`)
 - Captures and prints the result of the booking operation
+- This can be scheduled in a cron job on a local or remote machine
 
 ## 🏥 Use Case
 
@@ -35,7 +36,6 @@ Example parameters:
    - Select department, purpose, and time
    - Fill out patient info and symptoms
    - Confirm and submit
-   - 
 
 ## 🧪 Requirements
 
