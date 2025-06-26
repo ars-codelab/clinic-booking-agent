@@ -66,8 +66,8 @@ provided range ({first_time}–{last_time})
 
 8. Enter the patient’s name {person} and {symptoms} if requested. And click OK.
 
-9. Once you reach the final confirmation screen. Review the details carefully.
-DO NOT Click the final submit or confirm button.ABORT. Show me the information you see on this final page
+9. Once you reach the final confirmation screen. Review the details carefully. Click Confirm or Submit.
+   Save and Send me the information you see on this final page
 """)
 
 # --- 7. Allow user to specify user details or fall back to default values ---
