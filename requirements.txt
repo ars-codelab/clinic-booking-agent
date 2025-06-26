@@ -1,0 +1,5 @@
+langchain
+langchain-google-genai 
+browser-use 
+python-dotenv 
+playwright
