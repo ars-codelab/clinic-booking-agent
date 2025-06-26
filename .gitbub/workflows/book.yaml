@@ -1,0 +1,28 @@
+name: Scheduled Appointment Booking
+
+on:
+  schedule:
+    - cron: '58 20 * * *'  # run at 5:58 AM JST (UTC+9 = 20:59 UTC)
+  workflow_dispatch:       # allows manual test runs
+
+jobs:
+  run-booking:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run the booking agent
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          python agent_githb_deploy.py
