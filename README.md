@@ -8,7 +8,7 @@ Purpose of this agent is to automate this process so parents can get more sleep.
 Traditional automation would require reverse-engineering each clinic's website, mapping every clickable element, and constantly updating code when sites change. 
 We will use Browser-use - an open-source tool that connects LLMs directly to browsers. Instead of coding specific workflows, you simply tell the agent what you want to accomplish. The AI understands your intent, navigates the website, and completes the task autonomously. We will use this to solve our problem.
 
-## ✨ Features (provided by browser-use)
+## ✨ Features (largely provided by browser-use)
 
 - Automates browser actions (login, form filling, selection, submission)
 - Uses AI instructions to control behavior
@@ -17,7 +17,7 @@ We will use Browser-use - an open-source tool that connects LLMs directly to bro
 - Captures and prints the result of the booking operation
 - This script is intended to be scheduled in a cron job on a local or remote machine
 
-## 🔧 How It Works - This needs to be modified in the LLM task prompt in agent.py based on the flow of your clinic
+## 🔧 How The Agent Works
 
 1. Launches a real browser (non-headless) via `browser-use`.
 2. AI agent receives a structured task prompt with booking steps.
@@ -30,13 +30,13 @@ We will use Browser-use - an open-source tool that connects LLMs directly to bro
 
 ## 🔧 What is needed to make it work?
 Besides installing dependencies, to make this work, we just need 2 things. 
-- A task prompt that describes what the goal/tasks are (e.g. help me book an appointment in this site for tomorrow XXpm using my username as XX and password as YY, along with information needed for booking (such as name, phone number etc)
+- A task prompt that describes what the goal/tasks are (e.g. help me book an appointment in this site for tomorrow XXpm using my username as XX and password as YY) along with information needed for booking (such as name, phone number, site url etc)
   
 - An API key from your prefered LLM (e.g. OpenAI, Google, Anthropic)
 This repo uses Google's GEMINI API. For Using other supported APIs refer to  [`browser-use documentation`](https://docs.browser-use.com/customize/supported-models)
 
 ## 🏥 Task Prompt
-While you can give high task prompts to the LLM, let it figure out how to achieve the task, you will end up buring a lot of tokens. To make this run more effeciently, go through the booking site once. Take some high level notes like "On first page, enter this, click here ... On send page ..". This significantly shortens the time it takes to complete the task. See agent.py for instructions for an example clinic. 
+While you can give a high task prompts to the LLM and let it figure out how to achieve the task, you will end up burning a lot of tokens. To make this run more effeciently, go through the booking site once. Take some high level notes like "On first page, enter this, click here ... On send page ..". This significantly shortens the time it takes to complete the task. See agent.py for instructions for an example clinic. 
 Note: For a simpler implementation, include information needed for booking (e.g. patient name, date of birth etc.) right into the prompt
 You can also ask the user to provide this information during run-time (see agent.py)
 
