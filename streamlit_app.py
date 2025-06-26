@@ -81,7 +81,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{{{ secrets.GOOGLE_API_KEY }}}}
         run: |
-          python git_agent.py
+          python agent_githb_deploy.py
 """
 
         # 4. Push to GitHub
